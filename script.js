@@ -8,7 +8,7 @@ const mainInput = document.querySelector('#todo-form input')
 const currentDate = new Date().toJSON().slice(0,10)
 
 
-let allTasks = JSON.parse(localStorage.getItem('oneTask')) || []
+let allTasks = JSON.parse(localStorage.getItem('newTask')) || []
 
 if(localStorage.getItem('allTasks')) {
   allTasks.map((newTask) => {
@@ -38,7 +38,7 @@ todoForm.addEventListener('submit', (x) => {
   }
 
   allTasks.push(newTask)
-  localStorage.setItem('allTasks', JSON.stringify(newTask))
+  localStorage.setItem('newTask', JSON.stringify(allTasks))
 
   createTask(newTask)
 
